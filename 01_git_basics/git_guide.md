@@ -1,4 +1,4 @@
-# Git Basics — Dal Robotics Workflow
+# Git Basics: Dal Robotics Workflow
 
 Git tracks every change to code so we can collaborate without overwriting each other. This guide teaches you the workflow our team uses every day.
 
@@ -10,10 +10,10 @@ Git tracks every change to code so we can collaborate without overwriting each o
 |---|---|
 | **Repository (repo)** | A folder tracked by Git, containing all code and its history |
 | **Commit** | A saved snapshot of your changes with a message explaining what changed |
-| **Branch** | An independent line of development — your work doesn't affect others until it's merged |
+| **Branch** | An independent line of development, your work doesn't affect others until it's merged |
 | **Pull Request (PR)** | A request to merge your branch into the main codebase, with code review |
-| **main** | The stable, production-ready branch — you never push here directly |
-| **develop** | The integration branch — all features merge here first |
+| **main** | The stable, production-ready branch, you never push here directly |
+| **develop** | The integration branch, all features merge here first |
 
 ---
 
@@ -31,7 +31,7 @@ cd quadruped
 
 ## Our Daily Workflow
 
-Every piece of work — no matter how small — follows this cycle:
+Every piece of work, no matter how small, follows this cycle:
 
 ### Step 1: Always start from a fresh `develop`
 
@@ -49,9 +49,9 @@ git checkout -b feature/your-description
 ```
 
 Follow the naming convention:
-- `feature/` — new functionality
-- `fix/` — bug fix
-- `docs/` — documentation only
+- `feature/`: new functionality
+- `fix/`: bug fix
+- `docs/`: documentation only
 
 Example: `git checkout -b feature/ak40-can-driver`
 
@@ -104,7 +104,7 @@ git push
 ### Step 6: Open a Pull Request
 
 1. Go to https://github.com/dal-robotics/quadruped
-2. GitHub will show a banner: "Compare & pull request" — click it.
+2. GitHub will show a banner: "Compare & pull request", click it.
 3. Set **base** to `develop` (not `main`).
 4. Fill in the PR template completely.
 5. Request review from the Software Lead.
@@ -113,7 +113,7 @@ git push
 
 Reviewers will leave comments. For each comment:
 - Make the change in your code
-- Commit and push — the PR updates automatically
+- Commit and push, the PR updates automatically
 - Reply to the comment with "done" or your reasoning if you disagree
 
 ### Step 8: Merge
@@ -185,11 +185,11 @@ Then go to GitHub and open the PR. That's it.
 
 ## What Not to Do
 
-- **Never `git push` directly to `main` or `develop`** — branch protection will block it anyway
-- **Never `git commit -m "fix"` or `"update"** — be descriptive
+- **Never `git push` directly to `main` or `develop`** because branch protection will block it anyway
+- **Never `git commit -m "fix"` or `"update"`**, be descriptive
 - **Never commit `.env` files, passwords, or API keys**
 - **Never use `git push --force`** unless you are 100% sure what you're doing and have asked the Lead
 
 ---
 
-**Next step:** [02 — ESP32 & PlatformIO](../02_platformio_esp32/esp32_guide.md)
+**Next step:** [02: ESP32 & PlatformIO](../02_platformio_esp32/esp32_guide.md)

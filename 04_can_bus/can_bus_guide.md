@@ -1,6 +1,6 @@
 # CAN Bus & Motor Protocol Guide
 
-This guide explains how the robot's motors communicate — you don't need to implement this yourself right away, but every team member must understand it to work on the system.
+This guide explains how the robot's motors communicate, you don't need to implement this yourself right away, but every team member must understand it to work on the system.
 
 ---
 
@@ -20,13 +20,13 @@ Motor 3 ── CAN transceiver ────────────────�
 Motor 12 ─ CAN transceiver ─────────────────────────────────┘
 ```
 
-Every device has a **unique ID** (1–12 for our motors). A device only acts on messages addressed to its ID — others are ignored.
+Every device has a **unique ID** (1–12 for our motors). A device only acts on messages addressed to its ID, others are ignored.
 
 ### Why CAN and not USB or WiFi?
-- **Deterministic timing** — messages arrive in a guaranteed order with guaranteed latency
-- **Noise resistant** — uses differential signaling (2 wires, opposite signals); immune to electrical noise from motors
-- **Multi-master** — any device can send without a central coordinator
-- **1 Mbit/s** — fast enough for 1000 Hz control loops with 12 motors
+- **Deterministic timing**: messages arrive in a guaranteed order with guaranteed latency
+- **Noise resistant**: uses differential signaling (2 wires, opposite signals); immune to electrical noise from motors
+- **Multi-master**: any device can send without a central coordinator
+- **1 Mbit/s**: fast enough for 1000 Hz control loops with 12 motors
 
 ---
 
@@ -43,7 +43,7 @@ It supports three control modes:
 |---|---|---|
 | Position | Target angle | Slow, precise movements |
 | Velocity | Target speed | Continuous rotation |
-| **MIT mode** | (pos, vel, kp, kd, torque_ff) | **Our primary mode — torque control** |
+| **MIT mode** | (pos, vel, kp, kd, torque_ff) | Our primary mode, torque control |
 
 MIT mode is the most powerful. You send a full state: where you want the joint to be, how fast, and the stiffness of the "spring" (kp/kd). This lets you control both position AND compliance simultaneously.
 
@@ -51,7 +51,7 @@ MIT mode is the most powerful. You send a full state: where you want the joint t
 
 ## The MIT Mini Cheetah CAN Protocol
 
-The AK40-10 uses the same protocol as the MIT Mini Cheetah — an open protocol designed for high-performance legged robots.
+The AK40-10 uses the same protocol as the MIT Mini Cheetah, an open protocol designed for high-performance legged robots.
 
 ### Command frame (ESP32 → Motor)
 
@@ -113,7 +113,7 @@ Each motor ships with ID 1 by default. You must set unique IDs before connecting
 4. Set the ID for that motor (1–12)
 5. Disconnect, repeat for the next motor
 
-**Never have two motors with the same ID on the same bus — they will conflict and corrupt communication.**
+**Never have two motors with the same ID on the same bus, they will conflict and corrupt communication.**
 
 ---
 
@@ -132,7 +132,7 @@ At a high level, every millisecond the ESP32 does this:
 4. Repeat
 ```
 
-This loop runs at 500–1000 Hz. At 1000 Hz, you have 1 millisecond per loop — every line of code in that loop must be fast.
+This loop runs at 500–1000 Hz. At 1000 Hz, you have 1 millisecond per loop, every line of code in that loop must be fast.
 
 ---
 

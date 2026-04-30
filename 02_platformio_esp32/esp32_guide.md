@@ -1,16 +1,16 @@
 # ESP32 & PlatformIO Guide
 
-This guide teaches you how to write, build, and flash firmware to the ESP32 — the microcontroller that controls the robot's motors in real time.
+This guide teaches you how to write, build, and flash firmware to the ESP32, the microcontroller that controls the robot's motors in real time.
 
 ---
 
 ## What is the ESP32?
 
-The ESP32 is a microcontroller — a tiny computer that runs a single program in a loop, starting the moment it powers on. It has:
+The ESP32 is a microcontroller, a tiny computer that runs a single program in a loop, starting the moment it powers on. It has:
 - Dual-core 240 MHz processor
 - Built-in WiFi and Bluetooth
-- A built-in **CAN bus peripheral** (called TWAI) — this is how it talks to the motors
-- ~520 KB of RAM (tiny compared to a PC — be careful with memory)
+- A built-in **CAN bus peripheral** (called TWAI), this is how it talks to the motors
+- ~520 KB of RAM (tiny compared to a PC, be careful with memory)
 
 Our firmware is written in **C++** (not Python). C++ gives us direct hardware access and the speed needed to run a control loop at 500–1000 times per second.
 
@@ -34,7 +34,7 @@ The firmware lives at `quadruped/src/firmware/`. Here's what each file does:
 src/firmware/
 ├── platformio.ini          Project configuration (board, framework, libraries)
 ├── src/
-│   └── main.cpp            Entry point — setup() runs once, loop() runs forever
+│   └── main.cpp            Entry point: setup() runs once, loop() runs forever
 └── lib/
     └── ak40_driver/        Our motor driver library
         ├── ak40_driver.h   Class declaration (what functions exist)
@@ -148,7 +148,7 @@ The ESP32's built-in CAN controller is called **TWAI**. It requires an external 
 
 ## Exercise
 
-1. Build the real firmware (`pio run`) — it should compile cleanly.
+1. Build the real firmware (`pio run`), it should compile cleanly.
 2. Read through `ak40_driver.h` and write a short comment next to each function explaining what it does in plain English.
 3. Identify: where would you add code to send a command to motor ID 1?
 
@@ -165,4 +165,4 @@ The ESP32's built-in CAN controller is called **TWAI**. It requires an external 
 
 ---
 
-**Next step:** [03 — Python & MuJoCo Simulation](../03_python_simulation/python_mujoco_guide.md)
+**Next step:** [03: Python & MuJoCo Simulation](../03_python_simulation/python_mujoco_guide.md)

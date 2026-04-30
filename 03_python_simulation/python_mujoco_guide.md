@@ -7,7 +7,7 @@ Simulation lets us develop and test gait algorithms without the physical robot. 
 ## Why Simulate First?
 
 - No risk of damaging motors or the frame
-- Instant reset — crash the robot in sim, restart in 1 second
+- Instant reset, crash the robot in sim, restart in 1 second
 - Run 10x faster than real time for quick iteration
 - The entire gait control algorithm runs identically in sim and on hardware (by design)
 
@@ -19,9 +19,9 @@ MuJoCo (Multi-Joint dynamics with Contact) is a physics engine specialized for r
 - MIT (Cheetah), ETH Zurich (ANYmal), Boston Dynamics, DeepMind
 
 It models:
-- **Rigid body dynamics** — how links accelerate under forces
-- **Contact physics** — what happens when a foot hits the ground
-- **Actuators** — motors that apply torque to joints
+- **Rigid body dynamics**: how links accelerate under forces
+- **Contact physics**: what happens when a foot hits the ground
+- **Actuators**: motors that apply torque to joints
 
 ---
 
@@ -133,11 +133,11 @@ class MotorInterface:
     def get_joint_states(self) -> dict: ...
 
 class SimMotorInterface(MotorInterface):
-    """Wraps MuJoCo — used during simulation."""
+    """Wraps MuJoCo, used during simulation."""
     def __init__(self, model, data): ...
 
 class SerialMotorInterface(MotorInterface):
-    """Wraps USB Serial to ESP32 — used on real hardware."""
+    """Wraps USB Serial to ESP32, used on real hardware."""
     def __init__(self, port: str): ...
 ```
 
@@ -168,10 +168,10 @@ print("Simulation environment ready.")
 
 ## Exercise
 
-1. Run the pendulum simulation above — make it work.
-2. Change `data.ctrl[0] = 0.5` to `data.ctrl[0] = -2.0` — what happens to the pendulum?
+1. Run the pendulum simulation above, make it work.
+2. Change `data.ctrl[0] = 0.5` to `data.ctrl[0] = -2.0`, what happens to the pendulum?
 3. Read through `quadruped/src/simulation/` in the main repo and write a brief summary of what each file is for.
 
 ---
 
-**Next step:** [04 — CAN Bus & Motors](../04_can_bus/can_bus_guide.md)
+**Next step:** [04: CAN Bus & Motors](../04_can_bus/can_bus_guide.md)

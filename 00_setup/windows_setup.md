@@ -8,7 +8,7 @@ Install every tool your development environment needs. Follow steps in order.
 
 Git is the version control system that tracks all code changes.
 
-1. Download from https://git-scm.com/download/win — choose the 64-bit installer.
+1. Download from https://git-scm.com/download/win, choose the 64-bit installer.
 2. Run the installer. When asked about default editor, choose **VS Code** (you'll install that next).
 3. For line endings, choose **"Checkout Windows-style, commit Unix-style line endings"**.
 4. Accept defaults for everything else.
@@ -31,7 +31,7 @@ VS Code is the team's primary editor for both Python and ESP32 firmware.
    - **PlatformIO IDE** (by PlatformIO)
    - **Python** (by Microsoft)
    - **Pylance** (by Microsoft)
-   - **GitLens** (by GitKraken) — optional but very helpful
+   - **GitLens** (by GitKraken), optional but very helpful
 
 **Verify:**
 ```
@@ -120,7 +120,7 @@ git config --global core.autocrlf true
 
 1. Go to https://github.com/settings/tokens
 2. Generate a new token (classic): check **repo** and **workflow** scopes. Set expiry to 1 year.
-3. Copy the token — you will not see it again.
+3. Copy the token, you will not see it again.
 4. When Git asks for a password, paste this token.
 
 Or, use the **GitHub CLI** for easier auth:
@@ -152,4 +152,4 @@ All should print a version or "OK". Post in `#software-help` if anything fails.
 
 ---
 
-**Next step:** [01 — Git Basics](../01_git_basics/git_guide.md)
+**Next step:** [01: Git Basics](../01_git_basics/git_guide.md)
