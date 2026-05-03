@@ -36,7 +36,7 @@ Work through these in order. Each item links to a detailed guide.
 - [ ] Get your PR reviewed and merged (the Software Lead reviews onboarding PRs within 24h)
 
 ### Deep Dives (self-paced, complete by Week 2 meeting)
-- [ ] [STM32 & PlatformIO guide](02_platformio_stm32/stm32_guide.md): build and flash firmware
+- [ ] [STM32 & CubeIDE guide](02_platformio_stm32/stm32_guide.md): set up CubeIDE, build and flash firmware
 - [ ] [Python & MuJoCo simulation guide](03_python_simulation/python_mujoco_guide.md): run the simulation
 - [ ] [CAN bus & motor protocol guide](04_can_bus/can_bus_guide.md): understand how motors talk
 
@@ -67,6 +67,6 @@ At the meeting you'll be assigned your first real issue.
 |---|---|
 | [00: Windows Setup](00_setup/windows_setup.md) | Install every tool you need |
 | [01: Git Basics](01_git_basics/git_guide.md) | Git workflow, branches, PRs |
-| [02: STM32 & PlatformIO](02_platformio_stm32/stm32_guide.md) | Write and flash STM32 firmware |
+| [02: STM32 & CubeIDE](02_platformio_stm32/stm32_guide.md) | Set up CubeIDE, write and flash STM32 firmware |
 | [03: Python & MuJoCo](03_python_simulation/python_mujoco_guide.md) | Run the robot simulation |
 | [04: CAN Bus & Motors](04_can_bus/can_bus_guide.md) | How motors communicate |
